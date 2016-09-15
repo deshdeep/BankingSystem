@@ -12,6 +12,10 @@ public :
 		this->UserId = id;
 		this->UserPassword = password;
 	}
-
+	const string& getUserId();
+	const string& getUserPassword();                           //check for by value or by reference or by address
+	void setUserId(const string& userId);
+	void setUserPassword(const string& userPassword);
+	virtual ~User(){}
 
 };
