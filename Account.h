@@ -6,11 +6,11 @@ This class is to handle customers.
 #ifndef __ACCOUNT_H_INCLUDED__
 #define __ACCOUNT_H_INCLUDED__
 #include "User.h"
-#include "InputValidations.h"
+#include "InterfaceInputValidations.h"
 
 using namespace std;
 
-class Account : public User , public InputValidations
+class Account : public User , public InterfaceInputValidations
 {
 	string AccountName;
 	string AccountDoB;
@@ -20,18 +20,21 @@ class Account : public User , public InputValidations
 
 public :
 	Account(){}
-	Account(string name, string dob, string emailId, string phoneNumber, string address, string id, string password){}
-	const string getAccountName();
-	const string getAccountDoB();
-	const string getAccountEmailId();
-	const string getAccountPhoneNumber();
-	const string getAccountAddress();
-	void setAccountName(const string accountName);
-	void setAccountDoB(const string accountDoB);
-	void setAccountEmailId(const string accountEmailId);
-	void setAccountPhoneNumber(const string accountPhoneNumber);
-	void setAccountAddress(const string accountAddress);
-	//const Account& openAccount();
+	//Account(string name, string dob, string emailId, string phoneNumber, string address, string id, string password){}
+	const string& getAccountName();
+	const string& getAccountDoB();
+	const string& getAccountEmailId();
+	const string& getAccountPhoneNumber();
+	const string& getAccountAddress();
+	void setAccountName(const string& accountName);
+	void setAccountDoB(const string& accountDoB);
+	void setAccountEmailId(const string& accountEmailId);
+	void setAccountPhoneNumber(const string& accountPhoneNumber);
+	void setAccountAddress(const string& accountAddress);
+	const Account& openAccount();
+	bool checkForNumericInCharacterField(const string&);
+	bool checkForCharacterInNumericField(const string&);
+	bool checkForValidPhoneNumber(const string&);
 };
 
 

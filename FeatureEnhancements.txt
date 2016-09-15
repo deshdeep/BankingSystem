@@ -1,0 +1,8 @@
+
+1. In "virtual bool checkForNumericInCharacterField(const string&)" in  "class InterfaceInputValidations" is not validating string 
+   char by char. In future it should. Similarily for other virtual functions too.
+
+2. Implement "checkForValidDate" in class Account in future.
+
+3. Use random function for User class member variables initialisation in Account class in openAccount function 
+

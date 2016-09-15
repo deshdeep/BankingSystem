@@ -1,21 +1,32 @@
 #include "User.h"
+#include <iostream>
+using namespace std;
 
-class User
-{
-	string UserId;
-	string UserPassword;
-public : 
-	User(){}
+
 	
-	User(string id, string password)
+	
+	/*User(string id, string password)
 	{
 		this->UserId = id;
 		this->UserPassword = password;
-	}
-	const string& getUserId();
-	const string& getUserPassword();                           //check for by value or by reference or by address
-	void setUserId(const string& userId);
-	void setUserPassword(const string& userPassword);
-	virtual ~User(){}
+	}*/
 
-};
+	const string& User::getUserId()
+	{
+		return UserId;
+	}
+	const string& User::getUserPassword()
+	{
+		return UserPassword;
+	}
+	void User::setUserId(const string& userId)
+	{
+		this->UserId = userId;
+	}
+		void User::setUserPassword(const string& userPassword)
+	{
+		this->UserPassword = userPassword;
+	}
+	
+	
+
