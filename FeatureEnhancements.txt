@@ -6,3 +6,10 @@
 
 3. Use random function for User class member variables initialisation in Account class in openAccount function 
 
+4. Add documentation for each functions and variable types in header and interface files.
+
+5. Currently at some places while taking input, if input is not valid I am just stopping the workflow. Implement a strategy where 
+   it waits till user enter proper input or something to like this to handle the scenario.
+
+6. Currently there is just one static object to play with...next list of dynamically created objects...next create db connection and store data in db
+

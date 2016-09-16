@@ -5,7 +5,15 @@
 using namespace std;
 
 
+	Account::Account()
+	{
+		cout << "\n Account class constructor was called\n";
+	}
 
+	Account::~Account()
+	{
+		cout << "\n Account class destructor was called\n";
+	}
 
 	/*Account(string name, string dob, string emailId, string phoneNumber, string address, string id, string password) : User(id, password)
 	{
@@ -37,6 +45,11 @@ using namespace std;
 		return AccountAddress;
 	}
 
+	void Account::setAccountName(const string& accountName)
+	{
+		this->AccountName = accountName;
+	}
+
 	void Account::setAccountDoB(const string& accountDoB)
 	{
 		this->AccountDoB = accountDoB;
@@ -55,11 +68,6 @@ using namespace std;
 	void Account::setAccountAddress(const string& accountAddress)
 	{
 		this->AccountAddress = accountAddress;
-	}
-
-	const Account& Account::openAccount()
-	{
-			
 	}
 
 	bool Account::checkForNumericInCharacterField(const string& stringToCheck)
@@ -91,7 +99,7 @@ using namespace std;
 	bool Account::checkForValidPhoneNumber(const string& phoneNumberToCheck)
 	{
 		string tempString = phoneNumberToCheck;
-		if ((unsigned int)(tempString.length) != (unsigned int)10)
+		if ((tempString.size()) != 10)
 		{
 			return false;
 		}
@@ -100,10 +108,72 @@ using namespace std;
 
 	//virtual bool checkForValidDate(const string& dateToCheck)
 	//{
-	//	//Implement this function here itself	
+	//	//Implement this function here itself	and add to account.h too before implementing it in future
 	//}
 
+	bool Account::openAccount(Account& newAccount)
+	{
+		string tempString;
+		int tempInteger;
 
+		cout << "\nEnter UserId\n";
+		cin >> tempString;
+		if (newAccount.checkForNumericInCharacterField(tempString))
+		{
+			newAccount.setUserId(tempString);
+		}
+		else
+		{
+			cout << "\nInvalid input. Numerals not allowed in  character fields.\n";
+			return false;
+		}
+
+		cout << "\nEnter User Password\n";
+		cin >> tempString;
+		newAccount.setUserPassword(tempString);
+
+		cout << "\nEnter Account Name\n";
+		cin >> tempString;
+		if (newAccount.checkForNumericInCharacterField(tempString))
+		{
+			newAccount.setAccountName(tempString);
+		}
+		else
+		{
+			cout << "\nInvalid input. Numerals not allowed in  character fields.\n";
+			return false;
+		}
+		
+
+		cout << "\nEnter Account Date of birth\n";
+		cin >> tempString;
+		newAccount.setAccountDoB(tempString);
+		
+
+		cout << "\nEnter Account Email Id\n";
+		cin >> tempString;
+		newAccount.setAccountEmailId(tempString);
+
+		cout << "\nEnter Account Phone Number\n";
+		cin >> tempString;
+		if (newAccount.checkForCharacterInNumericField(tempString) && newAccount.checkForValidPhoneNumber(tempString))
+		{
+			newAccount.setAccountPhoneNumber(tempString);
+		}
+		else
+		{
+			cout << "\nInvalid input.Either characters were entered or entered phone number is not of 10 digits.\n";
+			return false;
+		}
+		
+
+		cout << "\nEnter Account Address\n";
+		cin >> tempString;
+		newAccount.setAccountAddress(tempString);
+
+
+		return true;
+	}
 
 
 

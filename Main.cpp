@@ -1,11 +1,13 @@
-#include<iostream>
-#include<cstdio>
+#include "Account.h"
+#include <iostream>
+#include <cstdio>
 using namespace std;
 
 int main()
 {
 	int a = 0;
 	printf("\t ****Welcome to Online Banking App****  \n\n\n");
+	Account newAccount;
 	do
 	{
 		printf("\nPlease enter your choice\n");
@@ -32,7 +34,9 @@ int main()
 		{
 			case 1:
 			{
-
+				
+				newAccount.openAccount(newAccount);
+				cout << "\nSample output" << newAccount.getAccountName();
 				break;
 			}
 			

@@ -5,7 +5,10 @@ Class member functions are lower camel case.
 These will always start with class name.
 Get and Set function parameters will be lower camel case.
 These will always start with class name.
-Make sure all header files and interfaces files have comments over each member functions
+Make sure all header files and interfaces files have comments over each member functions.
+Always use checks for input provided before setting the value.
+Always try to make code as readable as possible.
+
 */
 
 /*
@@ -28,13 +31,26 @@ class User
 		string UserPassword;
 
 public :
-		User(){}
+		//Default Constructor
+		User();		
+
+		//Default Destructor
+		virtual ~User();
+
 		//User(string id, string password){}
+
+		//To get user id 
 		const string& getUserId();
+
+		//To get user password
 		const string& getUserPassword();                           //check for by value or by reference or by address
+		
+		//To set user id
 		void setUserId(const string& userId);
+
+		//To set user password
 		void setUserPassword(const string& userPassword);
-		virtual ~User(){}
+		
 };
 
 #endif

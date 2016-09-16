@@ -2,9 +2,16 @@
 #include <iostream>
 using namespace std;
 
+	User::User()
+	{
+		cout << "\n User class constructor was called\n";
+	}
+	
+	User::~User()
+	{
+		cout << "\n User class destructor was called\n";
+	}
 
-	
-	
 	/*User(string id, string password)
 	{
 		this->UserId = id;
@@ -27,6 +34,8 @@ using namespace std;
 	{
 		this->UserPassword = userPassword;
 	}
+
+	
 	
 	
 
