@@ -17,6 +17,7 @@ class Account : public User , public InterfaceInputValidations
 	string AccountEmailId;
 	string AccountPhoneNumber;
 	string AccountAddress;
+	double AccountBalance = 0.0;
 
 public :
 	//Default Constructor
@@ -41,6 +42,9 @@ public :
 	//To get Account address
 	const string& getAccountAddress();
 
+	//To get Account balance
+	double& getAccountBalance();
+
 	//To set Account name
 	void setAccountName(const string& accountName);
 
@@ -56,13 +60,16 @@ public :
 	//TO set Account address
 	void setAccountAddress(const string& accountAddress);
 
+	//To set Account balance
+	void setAccountBalance(double& accountBalance);
+
 	//Already explained in InterfaceInputValidations.h
 	bool checkForNumericInCharacterField(const string&);
 	bool checkForCharacterInNumericField(const string&);
 	bool checkForValidPhoneNumber(const string&);
 	
 	//Write once implemented
-	bool openAccount(Account&);
+	bool openAccount(Account*);
 };
 
 

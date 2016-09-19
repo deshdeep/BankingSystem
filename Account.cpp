@@ -45,6 +45,11 @@ using namespace std;
 		return AccountAddress;
 	}
 
+	double& Account::getAccountBalance()
+	{
+		return this->AccountBalance;
+	}
+
 	void Account::setAccountName(const string& accountName)
 	{
 		this->AccountName = accountName;
@@ -68,6 +73,11 @@ using namespace std;
 	void Account::setAccountAddress(const string& accountAddress)
 	{
 		this->AccountAddress = accountAddress;
+	}
+
+	void Account::setAccountBalance(double& accountBalance)
+	{
+		this->AccountBalance = accountBalance;
 	}
 
 	bool Account::checkForNumericInCharacterField(const string& stringToCheck)
@@ -111,16 +121,16 @@ using namespace std;
 	//	//Implement this function here itself	and add to account.h too before implementing it in future
 	//}
 
-	bool Account::openAccount(Account& newAccount)
+	/*bool Account::openAccount(Account* newAccount)
 	{
 		string tempString;
 		int tempInteger;
 
 		cout << "\nEnter UserId\n";
 		cin >> tempString;
-		if (newAccount.checkForNumericInCharacterField(tempString))
+		if (newAccount->checkForNumericInCharacterField(tempString))
 		{
-			newAccount.setUserId(tempString);
+			newAccount->setUserId(tempString);
 		}
 		else
 		{
@@ -130,13 +140,13 @@ using namespace std;
 
 		cout << "\nEnter User Password\n";
 		cin >> tempString;
-		newAccount.setUserPassword(tempString);
+		newAccount->setUserPassword(tempString);
 
 		cout << "\nEnter Account Name\n";
 		cin >> tempString;
-		if (newAccount.checkForNumericInCharacterField(tempString))
+		if (newAccount->checkForNumericInCharacterField(tempString))
 		{
-			newAccount.setAccountName(tempString);
+			newAccount->setAccountName(tempString);
 		}
 		else
 		{
@@ -147,18 +157,18 @@ using namespace std;
 
 		cout << "\nEnter Account Date of birth\n";
 		cin >> tempString;
-		newAccount.setAccountDoB(tempString);
+		newAccount->setAccountDoB(tempString);
 		
 
 		cout << "\nEnter Account Email Id\n";
 		cin >> tempString;
-		newAccount.setAccountEmailId(tempString);
+		newAccount->setAccountEmailId(tempString);
 
 		cout << "\nEnter Account Phone Number\n";
 		cin >> tempString;
-		if (newAccount.checkForCharacterInNumericField(tempString) && newAccount.checkForValidPhoneNumber(tempString))
+		if (newAccount->checkForCharacterInNumericField(tempString) && newAccount->checkForValidPhoneNumber(tempString))
 		{
-			newAccount.setAccountPhoneNumber(tempString);
+			newAccount->setAccountPhoneNumber(tempString);
 		}
 		else
 		{
@@ -169,11 +179,11 @@ using namespace std;
 
 		cout << "\nEnter Account Address\n";
 		cin >> tempString;
-		newAccount.setAccountAddress(tempString);
+		newAccount->setAccountAddress(tempString);
 
 
 		return true;
-	}
+	}*/
 
 
 

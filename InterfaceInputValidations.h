@@ -7,6 +7,8 @@ This class will be used as interface for various input validations
 #ifndef __INTERFACE_INPUT_VALIDATIONS_H_INCLUDED__
 #define __INTERFACE_INPUT_VALIDATIONS_H_INCLUDED__
 
+//This class act as interface.
+
 #include<iostream>
 using namespace std;
 
