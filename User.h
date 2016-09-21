@@ -8,6 +8,7 @@ These will always start with class name.
 Make sure all header files and interfaces files have comments over each member functions.
 Always use checks for input provided before setting the value.
 Always try to make code as readable as possible.
+Always define our own copy constructor if an object has pointers or any run time allocation of resource like file handle, a network connection..etc.
 
 */
 

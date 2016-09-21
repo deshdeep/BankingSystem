@@ -121,7 +121,7 @@ using namespace std;
 	//	//Implement this function here itself	and add to account.h too before implementing it in future
 	//}
 
-	/*bool Account::openAccount(Account* newAccount)
+	bool Account::openAccount(Account* newAccount)
 	{
 		string tempString;
 		int tempInteger;
@@ -183,8 +183,8 @@ using namespace std;
 
 
 		return true;
-	}*/
+	}
 
-
+	
 
 

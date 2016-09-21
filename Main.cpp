@@ -9,8 +9,9 @@ int main()
 {
 	int a = 0;
 	printf("\t ****Welcome to Online Banking App****  \n\n\n");
-	
-	Account* newAccount = new Account;
+	Account accounts[10];
+	int accountIndex = 0;
+	Account* newAccount = nullptr;
 	do
 	{
 		
@@ -38,10 +39,11 @@ int main()
 		{
 			case 1:
 			{
-			    
+				newAccount = &accounts[accountIndex];
 				if (Transactions::openAccount(newAccount))
 				{
 					cout << "\nSample output\n" << newAccount->getAccountName() << endl;
+					accountIndex++;
 				}
 				else
 				{
@@ -51,7 +53,11 @@ int main()
 			}
 
 			case 2:
-			{
+			{         
+					  int index;
+					  cout << "\nEnter which account num to which you want to deposit\n";
+					  cin >> index;
+					  newAccount = &accounts[index-1];
 					  cout << "\nEnter the amount to be credited/deposited\n";
 					  double amountToCredit;
 					  cin >> amountToCredit;
@@ -68,6 +74,10 @@ int main()
 
 			case 3:
 			{
+					  int index;
+					  cout << "\nEnter which account num from which you want to withdraw\n";
+					  cin >> index;
+					  newAccount = &accounts[index - 1];
 					  cout << "\nEnter the amount to be withdrawn\n";
 					  double amountToWithdraw;
 					  cin >> amountToWithdraw;
@@ -94,7 +104,10 @@ int main()
 
 			case 6:
 			{
-					//take care of deleting account in this case of switch instead of doing it outside of switch
+					  int index;
+					  cout << "\nEnter the account num which you want to delete\n";
+					  cin >> index;
+					  newAccount = &accounts[index - 1];
 					  Transactions::deleteAccount(newAccount);
 					  cout << "\nCurrent Account was deleted \n";  
 					  break;
