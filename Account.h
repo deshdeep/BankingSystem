@@ -17,7 +17,7 @@ class Account : public User , public InterfaceInputValidations
 	string AccountEmailId;
 	string AccountPhoneNumber;
 	string AccountAddress;
-	double AccountBalance = 0.0;
+	double AccountBalance;
 
 public :
 	//Default Constructor

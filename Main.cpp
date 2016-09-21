@@ -1,7 +1,7 @@
 #include "Account.h"
 #include "Transactions.h"
 #include <iostream>
-#include <cstdio>
+#include <vector>
 
 using namespace std;
 
@@ -9,9 +9,12 @@ int main()
 {
 	int a = 0;
 	printf("\t ****Welcome to Online Banking App****  \n\n\n");
-	Account accounts[10];
-	int accountIndex = 0;
+	/*Account accounts[10];
+	int accountIndex = 0;*/
 	Account* newAccount = nullptr;
+	vector<Account> accounts;
+	int accountIndex = 0;
+	vector<Account>::iterator it;
 	do
 	{
 		
@@ -38,18 +41,20 @@ int main()
 		switch (a)
 		{
 			case 1:
-			{
-				newAccount = &accounts[accountIndex];
-				if (Transactions::openAccount(newAccount))
-				{
-					cout << "\nSample output\n" << newAccount->getAccountName() << endl;
-					accountIndex++;
-				}
-				else
-				{
-					cout << "\nFailed to create new account\n";
-				}
-				break;
+			{ 
+
+					  accounts.push_back(Account());
+					  newAccount = &accounts[accountIndex];
+					  if (Transactions::openAccount(newAccount))
+					  {
+						  cout << "\nSample output\n" << newAccount->getAccountName() << endl;
+							accountIndex++;
+					  }
+					  else
+					  {
+					    	cout << "\nFailed to create new account\n";
+					  }
+					  break;
 			}
 
 			case 2:
@@ -104,6 +109,9 @@ int main()
 
 			case 6:
 			{
+					  //This module won't work with vector as vector at the end of the code deletes all the entries of vector...and delete will delete
+					  //one of the entries hence at the end of the code while de-allocating memory it won't be able to fetch that location... so instead 
+					  //use erase method for vector
 					  int index;
 					  cout << "\nEnter the account num which you want to delete\n";
 					  cin >> index;
