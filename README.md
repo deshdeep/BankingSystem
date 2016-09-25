@@ -1,2 +1,1 @@
-# BankingSystem
-Sample banking system in c++
+This project is created while trying to simulate and understand banking system by adding features slowly slowly in c++. I am trying different ways to do the process by basic banking process. It can be used by beginner c++ developers.
