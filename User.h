@@ -28,7 +28,10 @@ using namespace std;
 
 class User
 {
-		string UserId;                  //use random function for these two variables for first time account creation
+		//use random function for these two variables for first time account creation
+		//make this user id unique which can be used in future as key for database or 
+		//any other kind of logging done per user
+		string UserId;                  
 		string UserPassword;
 
 public :

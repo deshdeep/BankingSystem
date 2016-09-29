@@ -99,7 +99,9 @@ int main()
 			
 			case 4:
 			{
-					  //to do list
+					  int index;
+					  cout << "\nEnter account num whose info you want\n";
+					  cin >> index;
 			}
 
 			case 5:
